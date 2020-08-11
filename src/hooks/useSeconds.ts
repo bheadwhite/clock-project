@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from "react"
 
 const useSeconds = () => {
   const controller = useClockController()
-  const [seconds, setSeconds] = useState<number>(controller.getSeconds())
+  const [seconds, setSeconds] = useState<string>(controller.getSeconds())
 
   const subscription = useMemo(
     () =>

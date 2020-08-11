@@ -3,12 +3,12 @@ import useClockController from "./useClockController"
 
 const useMinute = () => {
   const controller = useClockController()
-  const [minute, setMinute] = useState<number>(controller.getMinute())
+  const [minute, setMinute] = useState<string>(controller.getMinute())
 
   const subscription = useMemo(
     () =>
-      controller.onHourChange((nextMinute) => {
-        setMinute(nextMinute)
+      controller.onMinuteChange((nextMinute) => {
+        return setMinute(nextMinute)
       }),
     [controller]
   )
